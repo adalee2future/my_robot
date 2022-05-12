@@ -1,6 +1,17 @@
 <?xml version="1.0"?>
 <robot>
 
+  <gazebo reference="chassis"> 
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="left_wheel"> 
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="right_wheel"> 
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <legacyMode>false</legacyMode>
@@ -28,6 +39,7 @@
 
   <!-- camera -->
   <gazebo reference="camera">
+    <material>Gazebo/Blue</material>
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
