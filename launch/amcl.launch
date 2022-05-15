@@ -24,6 +24,9 @@
 
     <param name="laser_sigma_hit" value="0.04"/>
 
+    <param name="update_min_a" value="0.2618"/>
+    <param name="update_min_d" value="0.1"/>
+
   </node>
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
     <remap from="scan" to="/scan"/>
