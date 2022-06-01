@@ -6,12 +6,13 @@
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
   <node name="amcl" pkg="amcl" type="amcl" output="screen">
     <remap from="scan" to="/scan"/>
+
     <param name="odom_frame_id" value="odom"/>
     <param name="odom_model_type" value="diff-corrected"/>
     <param name="base_frame_id" value="robot_footprint"/>
     <param name="global_frame_id" value="map"/>
 
-    <param name="initial_pose_a" value="-1.5707"/>
+    <param name="initial_pose_a" value="0.0"/>
 
     <param name="odom_alpha1" value="0.005"/>
     <param name="odom_alpha2" value="0.005"/>
@@ -23,6 +24,9 @@
     <param name="laser_max_range" value="4"/>
 
     <param name="laser_sigma_hit" value="0.04"/>
+
+    <param name="update_min_d" value="0.1"/>
+    <param name="update_min_a" value="0.2618"/>
 
   </node>
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
